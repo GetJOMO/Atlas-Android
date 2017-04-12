@@ -64,6 +64,7 @@
         <attr name="theirTextSize" />
         <attr name="theirTextTypeface" />
         <attr name="theirTextStyle" />
+        <attr name="shouldShowAvatar" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="AtlasAddressBar">

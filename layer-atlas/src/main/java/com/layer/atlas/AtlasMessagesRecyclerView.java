@@ -41,6 +41,7 @@ public class AtlasMessagesRecyclerView extends RecyclerView {
     private AtlasMessagesAdapter mAdapter;
     private LinearLayoutManager mLayoutManager;
     private ItemTouchHelper mSwipeItemTouchHelper;
+    private boolean mShouldShowAvatar;
 
     private MessageStyle mMessageStyle;
 
@@ -86,6 +87,7 @@ public class AtlasMessagesRecyclerView extends RecyclerView {
             }
         });
 
+        setShouldShowAvatarInOneOnOneConversations(mShouldShowAvatar);
         return this;
     }
 
@@ -248,6 +250,7 @@ public class AtlasMessagesRecyclerView extends RecyclerView {
         messageStyleBuilder.myBubbleColor(ta.getColor(R.styleable.AtlasMessagesRecyclerView_myBubbleColor, context.getResources().getColor(R.color.atlas_color_primary_blue)));
         messageStyleBuilder.otherBubbleColor(ta.getColor(R.styleable.AtlasMessagesRecyclerView_theirBubbleColor, context.getResources().getColor(R.color.atlas_color_primary_gray)));
 
+        mShouldShowAvatar = ta.getBoolean(R.styleable.AtlasMessagesRecyclerView_shouldShowAvatar, true);
         ta.recycle();
         this.mMessageStyle = messageStyleBuilder.build();
     }

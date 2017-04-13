@@ -64,7 +64,7 @@
         <attr name="theirTextSize" />
         <attr name="theirTextTypeface" />
         <attr name="theirTextStyle" />
-        <attr name="setShouldShowAvatarsInOneOnOneConversations" format="boolean" />
+        <attr name="shouldShowAvatarsInOneOnOneConversations" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="AtlasAddressBar">

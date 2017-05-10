@@ -38,7 +38,7 @@ import com.layer.sdk.query.SortDescriptor;
 import com.squareup.picasso.Picasso;
 
 public class AtlasMessagesRecyclerView extends RecyclerView {
-    private AtlasMessagesAdapter mAdapter;
+    protected AtlasMessagesAdapter mAdapter;
     private LinearLayoutManager mLayoutManager;
     private ItemTouchHelper mSwipeItemTouchHelper;
     private boolean mShouldShowAvatarsInOneOnOneConversations;
@@ -89,11 +89,6 @@ public class AtlasMessagesRecyclerView extends RecyclerView {
 
         setShouldShowAvatarInOneOnOneConversations(mShouldShowAvatarsInOneOnOneConversations);
         return this;
-    }
-
-    @Override
-    public void setAdapter(Adapter adapter) {
-        throw new RuntimeException("AtlasMessagesRecyclerView sets its own Adapter");
     }
 
     /**
@@ -238,7 +233,7 @@ public class AtlasMessagesRecyclerView extends RecyclerView {
     /**
      * Scrolls if the user is at the end
      */
-    private void autoScroll() {
+    protected void autoScroll() {
         int end = mAdapter.getItemCount() - 1;
         if (end <= 0) return;
         int visible = findLastVisibleItemPosition();

@@ -684,7 +684,7 @@ public class AtlasMessagesAdapter extends RecyclerView.Adapter<AtlasMessagesAdap
     // Inner classes
     //==============================================================================================
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public final static int RESOURCE_ID_FOOTER = R.layout.atlas_message_item_footer;
 
         // View cache
@@ -696,7 +696,7 @@ public class AtlasMessagesAdapter extends RecyclerView.Adapter<AtlasMessagesAdap
         }
     }
 
-    static class CellViewHolder extends ViewHolder {
+    public static class CellViewHolder extends ViewHolder {
         public final static int RESOURCE_ID_ME = R.layout.atlas_message_item_me;
         public final static int RESOURCE_ID_THEM = R.layout.atlas_message_item_them;
 

@@ -359,15 +359,15 @@ public class AtlasConversationsAdapter extends RecyclerView.Adapter<AtlasConvers
     // Inner classes
     //==============================================================================================
 
-    static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         // Layout to inflate
         public final static int RESOURCE_ID = R.layout.atlas_conversation_item;
 
         // View cache
-        protected TextView mTitleView;
-        protected AtlasAvatar mAvatarCluster;
-        protected TextView mMessageView;
-        protected TextView mTimeView;
+        public TextView mTitleView;
+        public AtlasAvatar mAvatarCluster;
+        public TextView mMessageView;
+        public TextView mTimeView;
 
         protected ConversationStyle conversationStyle;
         protected Conversation mConversation;

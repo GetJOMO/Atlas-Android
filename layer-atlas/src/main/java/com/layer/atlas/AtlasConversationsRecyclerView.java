@@ -37,10 +37,10 @@ import com.layer.sdk.messaging.Conversation;
 import com.squareup.picasso.Picasso;
 
 public class AtlasConversationsRecyclerView extends RecyclerView {
-    AtlasConversationsAdapter mAdapter;
+    protected AtlasConversationsAdapter mAdapter;
     private ItemTouchHelper mSwipeItemTouchHelper;
 
-    private ConversationStyle conversationStyle;
+    protected ConversationStyle conversationStyle;
 
     public AtlasConversationsRecyclerView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
@@ -73,11 +73,6 @@ public class AtlasConversationsRecyclerView extends RecyclerView {
 
     public AtlasConversationsRecyclerView init(LayerClient layerClient, Picasso picasso) {
         return init(layerClient, picasso, new ConversationFormatter());
-    }
-
-    @Override
-    public void setAdapter(Adapter adapter) {
-        throw new RuntimeException("AtlasConversationsRecyclerView sets its own Adapter");
     }
 
     public AtlasConversationsRecyclerView addCellFactories (AtlasCellFactory... cellFactories) {

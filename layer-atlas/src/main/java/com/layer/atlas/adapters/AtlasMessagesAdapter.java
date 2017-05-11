@@ -61,7 +61,7 @@ import java.util.Set;
  * @see AtlasCellFactory
  */
 public class AtlasMessagesAdapter extends RecyclerView.Adapter<AtlasMessagesAdapter.ViewHolder> implements AtlasBaseAdapter<Message>, RecyclerViewController.Callback {
-    private final static int VIEW_TYPE_FOOTER = 0;
+    protected final static int VIEW_TYPE_FOOTER = 0;
 
     protected final LayerClient mLayerClient;
     protected final Picasso mPicasso;
@@ -684,7 +684,7 @@ public class AtlasMessagesAdapter extends RecyclerView.Adapter<AtlasMessagesAdap
     // Inner classes
     //==============================================================================================
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         public final static int RESOURCE_ID_FOOTER = R.layout.atlas_message_item_footer;
 
         // View cache
@@ -696,7 +696,7 @@ public class AtlasMessagesAdapter extends RecyclerView.Adapter<AtlasMessagesAdap
         }
     }
 
-    static class CellViewHolder extends ViewHolder {
+    public static class CellViewHolder extends ViewHolder {
         public final static int RESOURCE_ID_ME = R.layout.atlas_message_item_me;
         public final static int RESOURCE_ID_THEM = R.layout.atlas_message_item_them;
 
@@ -709,12 +709,12 @@ public class AtlasMessagesAdapter extends RecyclerView.Adapter<AtlasMessagesAdap
         protected TextView mTimeGroupTime;
         protected Space mClusterSpaceGap;
         protected AtlasAvatar mAvatar;
-        protected ViewGroup mCell;
+        public ViewGroup mCell;
         protected TextView mReceipt;
 
         // Cell
-        protected AtlasCellFactory.CellHolder mCellHolder;
-        protected AtlasCellFactory.CellHolderSpecs mCellHolderSpecs;
+        public AtlasCellFactory.CellHolder mCellHolder;
+        public AtlasCellFactory.CellHolderSpecs mCellHolderSpecs;
 
         public CellViewHolder(View itemView, Picasso picasso, boolean shouldShowAvatarPresence) {
             super(itemView);
@@ -776,9 +776,9 @@ public class AtlasMessagesAdapter extends RecyclerView.Adapter<AtlasMessagesAdap
         }
     }
 
-    private static class CellType {
-        protected final boolean mMe;
-        protected final AtlasCellFactory mCellFactory;
+    protected static class CellType {
+        public final boolean mMe;
+        public final AtlasCellFactory mCellFactory;
 
         public CellType(boolean me, AtlasCellFactory CellFactory) {
             mMe = me;

@@ -41,15 +41,15 @@ public class AtlasConversationsAdapter extends RecyclerView.Adapter<AtlasConvers
     protected final LayerClient mLayerClient;
     protected final Picasso mPicasso;
     private final RecyclerViewController<Conversation> mQueryController;
-    private final LayoutInflater mInflater;
+    protected final LayoutInflater mInflater;
     private long mInitialHistory = 0;
 
     private OnConversationClickListener mConversationClickListener;
-    private ViewHolder.OnClickListener mViewHolderClickListener;
+    protected ViewHolder.OnClickListener mViewHolderClickListener;
 
     private final DateFormat mDateFormat;
     private final DateFormat mTimeFormat;
-    private ConversationStyle conversationStyle;
+    protected ConversationStyle conversationStyle;
     private final IdentityRecyclerViewEventListener mIdentityEventListener;
 
     protected Set<AtlasCellFactory> mCellFactories;
@@ -395,7 +395,7 @@ public class AtlasConversationsAdapter extends RecyclerView.Adapter<AtlasConvers
             mTimeView.setTypeface(conversationStyle.getDateTextTypeface());
         }
 
-        protected ViewHolder setClickListener(OnClickListener clickListener) {
+        public ViewHolder setClickListener(OnClickListener clickListener) {
             mClickListener = clickListener;
             return this;
         }

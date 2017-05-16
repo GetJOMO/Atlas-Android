@@ -1,6 +1,7 @@
 package com.layer.atlas.util.views;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
@@ -8,7 +9,7 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import android.widget.EditText;
 
-public class EmptyDelEditText extends EditText {
+public class EmptyDelEditText extends AppCompatEditText {
     private OnEmptyDelListener mListener;
 
     public EmptyDelEditText(Context context) {

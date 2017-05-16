@@ -57,13 +57,13 @@ public class AtlasAddressBar extends LinearLayout {
     private OnParticipantSelectionChangeListener mOnParticipantSelectionChangeListener;
     private OnParticipantSelectionFailedListener mOnParticipantSelectionFailedListener;
 
-    private FlowLayout mSelectedParticipantLayout;
-    private EmptyDelEditText mFilter;
-    private RecyclerView mParticipantList;
-    private AvailableConversationAdapter mAvailableConversationAdapter;
-    private final Set<Identity> mSelectedParticipants = new LinkedHashSet<>();
-    private Set<Identity> mIdentities;
-    private List<String> mRestoredParticipantIds;
+    protected FlowLayout mSelectedParticipantLayout;
+    protected EmptyDelEditText mFilter;
+    protected RecyclerView mParticipantList;
+    protected AvailableConversationAdapter mAvailableConversationAdapter;
+    protected final Set<Identity> mSelectedParticipants = new LinkedHashSet<>();
+    protected Set<Identity> mIdentities;
+    protected List<String> mRestoredParticipantIds;
 
     private boolean mShowConversations;
 

@@ -66,6 +66,7 @@ public class AtlasAddressBar extends LinearLayout {
     protected List<String> mRestoredParticipantIds;
 
     private boolean mShowConversations;
+    protected boolean mShouldShowPresence;
 
     // styles
     private int mInputTextSize;
@@ -142,6 +143,11 @@ public class AtlasAddressBar extends LinearLayout {
         // Fetch identities from database
         IdentityFetcher identityFetcher = new IdentityFetcher(layerClient);
         identityFetcher.fetchIdentities(new IdentitiesFetchedCallback());
+        return this;
+    }
+
+    public AtlasAddressBar setShouldShowPresence(boolean shouldShowPresence) {
+        mShouldShowPresence = shouldShowPresence;
         return this;
     }
 
@@ -458,6 +464,7 @@ public class AtlasAddressBar extends LinearLayout {
             mAvatar.init(picasso)
                     .setStyle(mAvatarStyle)
                     .setParticipants(participant);
+            mAvatar.setShouldShowPresence(mShouldShowPresence);
 
             setOnClickListener(new OnClickListener() {
                 @Override
@@ -515,7 +522,7 @@ public class AtlasAddressBar extends LinearLayout {
      * Conversations.  Items are filtered by a participant filter string and by a set of selected
      * Participants.
      */
-    private class AvailableConversationAdapter extends RecyclerView.Adapter<AvailableConversationAdapter.ViewHolder> implements RecyclerViewController.Callback {
+    protected class AvailableConversationAdapter extends RecyclerView.Adapter<AvailableConversationAdapter.ViewHolder> implements RecyclerViewController.Callback {
         private final LayerClient mLayerClient;
         private final Picasso mPicasso;
         private final RecyclerViewController<Conversation> mQueryController;
@@ -523,7 +530,7 @@ public class AtlasAddressBar extends LinearLayout {
         private final List<Identity> mParticipants = new ArrayList<>();
         private Set<Identity> mAllIdentities;
 
-        AvailableConversationAdapter(LayerClient client, Picasso picasso) {
+        public AvailableConversationAdapter(LayerClient client, Picasso picasso) {
             this(client, picasso, null);
         }
 
@@ -740,12 +747,13 @@ public class AtlasAddressBar extends LinearLayout {
         //==============================================================================================
 
         protected class ViewHolder extends RecyclerView.ViewHolder {
-            private AtlasAvatar mAvatar;
-            private TextView mTitle;
+            public AtlasAvatar mAvatar;
+            public TextView mTitle;
 
             public ViewHolder(ViewGroup parent) {
                 super(LayoutInflater.from(parent.getContext()).inflate(R.layout.atlas_address_bar_item, parent, false));
                 mAvatar = (AtlasAvatar) itemView.findViewById(R.id.avatar);
+                mAvatar.setShouldShowPresence(mShouldShowPresence);
                 mTitle = (TextView) itemView.findViewById(R.id.title);
                 mTitle.setTextColor(mListTextColor);
                 mTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, mListTextSize);

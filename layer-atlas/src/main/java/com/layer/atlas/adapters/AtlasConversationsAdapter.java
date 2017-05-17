@@ -44,7 +44,7 @@ public class AtlasConversationsAdapter extends RecyclerView.Adapter<AtlasConvers
     protected final LayoutInflater mInflater;
     private long mInitialHistory = 0;
 
-    private OnConversationClickListener mConversationClickListener;
+    protected OnConversationClickListener mConversationClickListener;
     protected ViewHolder.OnClickListener mViewHolderClickListener;
 
     private final DateFormat mDateFormat;
@@ -420,7 +420,7 @@ public class AtlasConversationsAdapter extends RecyclerView.Adapter<AtlasConvers
             return mClickListener.onLongClick(this);
         }
 
-        interface OnClickListener {
+        public interface OnClickListener {
             void onClick(ViewHolder viewHolder);
 
             boolean onLongClick(ViewHolder viewHolder);

@@ -40,7 +40,7 @@ import java.util.Set;
 public class AtlasConversationsAdapter extends RecyclerView.Adapter<AtlasConversationsAdapter.ViewHolder> implements AtlasBaseAdapter<Conversation>, RecyclerViewController.Callback {
     protected final LayerClient mLayerClient;
     protected final Picasso mPicasso;
-    private final RecyclerViewController<Conversation> mQueryController;
+    protected RecyclerViewController<Conversation> mQueryController;
     protected final LayoutInflater mInflater;
     private long mInitialHistory = 0;
 

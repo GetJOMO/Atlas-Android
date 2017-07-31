@@ -1,5 +1,35 @@
 # Atlas Android
 
+## 0.4.12
+
+### Major Changes
+  * Update to Layer Android SDK Version 0.23.18
+  
+## 0.4.11
+
+### Major Changes
+  * Update to Layer Android SDK Version 0.23.17
+  * Added read/unread styling for DateTextView
+  * Added getter/setter for avatar presence to the ConversationsRecyclerView
+
+## 0.4.10
+
+### Major Changes
+  * Update to Layer Android SDK Version 0.23.16
+
+## 0.4.9
+
+### Major Changes
+  * Added support for Telemetry. For more details please refer to [Android Documentation](https://docs.layer.com/sdk/android/privacy#telemetry)
+  * Displaying Timestamp for the first message in the list
+  * Basic tests
+  * Tests now run on CircleCI with every pull request
+  
+#### Bug Fixes
+  * Fixed chat bubble empty on receiving long messages
+  * Using fixed heights suitable for image previews to stop images from resizing on fragment/activity resize
+
+## 0.4.8 -- ROLLED BACK due to bug. please update to 0.4.9
 
 ## 0.4.7
 

@@ -76,7 +76,7 @@ Atlas is divided into five basic `View` components, typically presented on a scr
 
 ### <a name="conversations"></a>Conversations
 
-####AtlasConversationsRecyclerView
+#### AtlasConversationsRecyclerView
 
 The <a href="layer-atlas/src/main/java/com/layer/atlas/AtlasConversationsRecyclerView.java">AtlasConversationsRecyclerView</a> is a list of Conversations.
 
